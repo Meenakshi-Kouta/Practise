@@ -1,7 +1,7 @@
 export class SuperHero {
-    id?: number;
+    id? : number;
     name = "";
     firstName = "";
     lastName = "";
     place = "";
-}
+  }

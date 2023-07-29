@@ -35,7 +35,9 @@ namespace SuperHeroAPI.Context
         {
             modelBuilder.Entity<SuperHero>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
                 entity.Property(e => e.FirstName)
                     .IsRequired()

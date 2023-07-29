@@ -1,4 +1,3 @@
-<button (click)="initNewHero()">Create New Hero</button>
 <table>
   <thead>
     <th>Name</th>
@@ -16,7 +15,7 @@
     </tr>
   </tbody>
 </table>
-
+<button (click)="initNewHero()">Create New Hero</button>
 <app-edit-hero
   [hero]="heroToEdit"
   (heroesUpdated)="updateHeroList($event)"

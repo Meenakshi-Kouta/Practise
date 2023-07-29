@@ -11,24 +11,24 @@ export class AppComponent {
   title = 'SuperHero.UI';
   heroes: SuperHero[] = [];
   heroToEdit?: SuperHero;
-
-  constructor(private SuperHeroService: SuperHeroService) {}
-
-  ngOnInit() : void {
-    this.SuperHeroService
-    .getSuperHeroes()
-    .subscribe((result: SuperHero[]) => (this.heroes = result));
-    //.subscribe((result: SuperHero[]) => {this.heroes = result;});
-    //console.log(JSON.stringify(result));
+  
+  constructor(private superHeroService : SuperHeroService) { }
+  
+    ngOnInit() : void {
+      this.superHeroService
+      .getSuperHeroes()
+      .subscribe((result : SuperHero[]) => (this.heroes = result));
+    }
+  
+    updateHeroList(heroes: SuperHero[]) {
+      this.heroes = heroes;
+    }
+  
+    initNewHero() {
+      this.heroToEdit = new SuperHero();
+    }
+  
+    editHero(hero: SuperHero) {
+      this.heroToEdit = hero;
+    }
   }
-  updateHeroList(heroes: SuperHero[]) {
-    this.heroes = heroes;
-  }
-
-  initNewHero() {
-    this.heroToEdit = new SuperHero();
-  }
-  editHero(hero: SuperHero) {
-    this.heroToEdit = hero;
-  }
-}
