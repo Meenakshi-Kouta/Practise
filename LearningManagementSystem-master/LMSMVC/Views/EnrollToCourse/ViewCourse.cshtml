@@ -1,0 +1,51 @@
+﻿
+@model IEnumerable<LMSMVC.Models.Courses>
+
+@{
+    ViewBag.Title = "Courses";
+    <link href="~/Content/Site.css" rel="stylesheet" />
+}
+
+<h2>COURSES AVAILABLE</h2>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseDuration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseApproval)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseDuration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseApproval)
+            </td>
+        </tr>
+    }
+
+</table>
+<p>
+    @Html.ActionLink("Enroll To a Course", "Create")
+</p>

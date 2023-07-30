@@ -1,0 +1,44 @@
+﻿@model IEnumerable<LMSMVC.Models.User>
+
+@{ ViewBag.Title = "Learners";
+<link href="~/Content/Site.css" rel="stylesheet" /> }
+
+<h2>LEARNERS</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.UserName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Email)
+    </td>
+
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { mail = item.Email.ToString() }) |
+        @Html.ActionLink("Delete", "Delete", new { mail = item.Email.ToString() }) |
+        @Html.ActionLink("Progress", "CourseStatus", new { mail = item.Email.ToString() }, null) |
+        @Html.ActionLink("Completion", "CourseCompletion", new { mail = item.Email.ToString() }, null)
+    </td>
+</tr>
+}
+
+</table>
+<p>
+    @Html.ActionLink("Add A New Learner ", "Create")
+</p>

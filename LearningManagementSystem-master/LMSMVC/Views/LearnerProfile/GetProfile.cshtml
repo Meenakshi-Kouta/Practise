@@ -1,0 +1,46 @@
+﻿
+@model IEnumerable<LMSMVC.Models.LearnerProfile>
+
+@{ ViewBag.Title = "My Profile";
+    Layout = "~/Views/Shared/_LearnerLayout.cshtml";
+    <link href="~/Content/Site.css" rel="stylesheet" />
+}
+
+<h2>My Profile</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EnrollmentDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseCompletion)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnrollmentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseCompletion)
+            </td>
+
+        </tr>
+    }
+
+</table>
+

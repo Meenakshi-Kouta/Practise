@@ -1,0 +1,44 @@
+﻿@model IEnumerable<LMSMVC.Models.Completion>
+
+@{ ViewBag.Title = "CourseCompletion";
+<link href="~/Content/Site.css" rel="stylesheet" /> }
+
+<h2>Course Completion Status of Learner</h2>
+
+@using (Html.BeginForm("CourseStatus", "UserDetails", FormMethod.Get))
+{
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseCompletion)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.CourseID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CourseName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CourseStatus)
+    </td>
+    <th>
+        @Html.DisplayFor(modelItem => item.CourseCompletion)
+    </th>
+</tr>}
+</table>}
+

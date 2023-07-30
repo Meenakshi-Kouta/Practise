@@ -1,0 +1,119 @@
+﻿@model IEnumerable<LMSMVC.Models.Tests>
+@{
+    ViewBag.Title = "Test-C";
+    Layout = "~/Views/Shared/_LearnerLayout.cshtml";
+    <link href="~/Content/Site.css" rel="stylesheet" />
+}
+
+<h2>Take the Test</h2>
+
+<meta charset="utf-8" />
+<title>C Programming Test</title>
+<br />
+<h4><b> C Programming Test </b></h4>
+<br />
+    1. What is a lint?
+<br />
+<br />
+<select id="item1" name="Item 1">
+    <OPTION VALUE="null"> Select</OPTION>
+    <OPTION VALUE="C Compiler">C Compiler</OPTION>
+    <OPTION VALUE="Analysing Tool">Analysing Tool</OPTION>
+    <OPTION VALUE="Interactive Debugger">Interactive Debugger</OPTION>
+</select>
+
+    <! -- Ansr1, Analysing Tool -->
+<br />
+<br />
+    2. In the C language, the constant is defined
+<br />
+<br />
+<select id="item2" name="Item 2">
+    <OPTION VALUE="null"> Select</OPTION>
+    <OPTION VALUE="Before main">Before main</OPTION>
+    <OPTION VALUE="After main">After main</OPTION>
+    <OPTION VALUE="Anywhere, but starting on a new line">Anywhere, but starting on a new line</OPTION>
+</select>
+    <! -- Ansr2, Anywhere, but starting on a new line -->
+<br />
+<br />
+    3. Directives are translated by
+<br />
+<br />
+<select id="item3" name="Item 3">
+    <OPTION VALUE="null"> Select</OPTION>
+    <OPTION VALUE="Pre-Processor">Pre-Processor</OPTION>
+    <OPTION VALUE="Compiler">Compiler</OPTION>
+    <OPTION VALUE="Linker">Linker</OPTION>
+</select>
+<! -- Ansr3, Pre-Processor -->
+<br />
+<br />
+
+    4. How many bytes does "int = D" use?
+<br />
+<br />
+
+<select id="item4" name="Item 4">
+    <OPTION VALUE="null"> Select</OPTION>
+    <OPTION VALUE="0">0</OPTION>
+    <OPTION VALUE="1">1</OPTION>
+    <OPTION VALUE="2 or 4">2 or 4</OPTION>
+</select>
+    <! -- Ansr4, 2 or 4 -->
+<br />
+<br />
+<br />
+
+<button onclick="message()">Check your score here</button>
+<br />
+
+@using (Html.BeginForm("EditScore", "Tests", new { id = ViewData["id"] }, FormMethod.Post))
+{
+    <p>Please, enter your score in the below textbox after taking test!</p>
+    <br />
+    <input type="text" name="score" />
+    <input type="Submit" />
+    <br />
+    <b>@Html.ActionLink("Submit", "SubmitC", new { })</b>}
+@*<button onclick="message()">Check your Score</button>
+    <br />
+    <br />
+    <b>@Html.ActionLink("Submit", "SubmitC", new { })</b>*@
+
+<SCRIPT>
+    function message() {
+        var score = null;
+        count = 0
+        var a1 = document.getElementById('item1');
+        var a2 = document.getElementById('item2');
+        var a3 = document.getElementById('item3');
+        var a4 = document.getElementById('item4');
+        if (a1.value == "null" || a2.value == "null" || a3.value == "null" || a4.value == "null") {
+            alert('Please answer all the questions')
+        }
+        else {
+
+
+            if (a1.value == "Analysing Tool") {
+                count = count + 1
+            }
+            if (a2.value == "Anywhere, but starting on a new line") {
+                count = count + 1
+            }
+            if (a3.value == "Pre-Processor") {
+                count = count + 1
+            }
+            if (a4.value == "2 or 4") {
+                count = count + 1
+            }
+            alert('Your Score is ' + (count / 4 * 100) + '%')
+
+
+        }
+        //score = Convert.Todecimal(Request[count].ToString());
+        var percentage = (count / 4) * 100;
+        return percentage;
+
+
+    }</SCRIPT>

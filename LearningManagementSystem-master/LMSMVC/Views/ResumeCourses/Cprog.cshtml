@@ -1,0 +1,30 @@
+﻿@*@model IEnumerable<LMSMVC.Models.Course>*@
+
+@{ ViewBag.Title = "Courese-C Proframming";
+    Layout = "~/Views/Shared/_LearnerLayout.cshtml";
+    <link href="~/Content/Site.css" rel="stylesheet" />}
+
+<h2>C Programming Course</h2>
+<br />
+
+<h4>Watch the below video to complete the course.</h4>
+<br />
+
+<p>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/8PopR3x-VMY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</p>
+<br />
+@using (Html.BeginForm("Edit", "ResumeCourses", new { id = ViewData["id"] }, FormMethod.Post))
+{
+    <p>Click here to complete the course.</p>
+    <button type="submit" onclick="message()">Completed</button>
+}
+<SCRIPT>
+function message() {
+        alert('You have completed the course')
+    }</SCRIPT>
+
+<h4><b>After completing @Html.ActionLink("click here", "Index", "ResumeCourses", new { }, null) to go back to the Courses page.</b></h4>
+

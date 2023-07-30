@@ -1,0 +1,44 @@
+﻿@model IEnumerable<LMSMVC.Models.Courses>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    <link href="~/Content/Site.css" rel="stylesheet" />
+}
+<p>
+    @Html.ActionLink("Create New Course", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseDuration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseApproval)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseDuration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseApproval)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CourseID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CourseID })
+            </td>
+        </tr>
+    }
+
+</table>
+
