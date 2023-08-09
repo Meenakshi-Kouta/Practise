@@ -135,3 +135,8 @@ D:\Practise\SuperHeroAPI\SuperHeroAPI\SuperHeroAPI\obj\Debug\netcoreapp3.1\stati
 D:\Practise\SuperHeroAPI\SuperHeroAPI\SuperHeroAPI\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.build.SuperHeroAPI.props
 D:\Practise\SuperHeroAPI\SuperHeroAPI\SuperHeroAPI\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildMultiTargeting.SuperHeroAPI.props
 D:\Practise\SuperHeroAPI\SuperHeroAPI\SuperHeroAPI\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildTransitive.SuperHeroAPI.props
+D:\Practise\SuperHeroAPI\SuperHeroAPI\SuperHeroAPI\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+D:\Practise\SuperHeroAPI\SuperHeroAPI\SuperHeroAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+D:\Practise\SuperHeroAPI\SuperHeroAPI\SuperHeroAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Practise\SuperHeroAPI\SuperHeroAPI\SuperHeroAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Practise\SuperHeroAPI\SuperHeroAPI\SuperHeroAPI\obj\Debug\netcoreapp3.1\SuperHeroAPI.MvcApplicationPartsAssemblyInfo.cs

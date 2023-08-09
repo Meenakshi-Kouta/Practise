@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 // If you have enabled NRTs for your project, then un-comment the following line:
 // #nullable disable
 
-namespace SuperHeroAPI.Context
+namespace SuperHeroAPI.Models
 {
     public partial class SuperHeroContext : DbContext
     {
@@ -20,7 +20,7 @@ namespace SuperHeroAPI.Context
         }
 
         public virtual DbSet<SuperHero> SuperHero { get; set; }
-        //public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<User> User { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -39,7 +39,7 @@ namespace SuperHeroAPI.Context
                     .IsRequired()
                     .HasMaxLength(30);
 
-                entity.Property(e => e.LastName)
+                entity.Property(e => e.Lastname)
                     .IsRequired()
                     .HasColumnName("LASTNAME")
                     .HasMaxLength(30);
@@ -54,34 +54,34 @@ namespace SuperHeroAPI.Context
                     .HasMaxLength(50);
             });
 
-            //modelBuilder.Entity<User>(entity =>
-            //{
-            //    entity.Property(e => e.UserId)
-            //        .HasColumnName("UserID")
-            //        .ValueGeneratedNever();
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.Property(e => e.UserId)
+                    .HasColumnName("UserID")
+                    .ValueGeneratedNever();
 
-            //    entity.Property(e => e.Address)
-            //        .IsRequired()
-            //        .HasMaxLength(1024);
+                entity.Property(e => e.Address)
+                    .IsRequired()
+                    .HasMaxLength(1024);
 
-            //    entity.Property(e => e.Department)
-            //        .IsRequired()
-            //        .HasMaxLength(100)
-            //        .IsUnicode(false);
+                entity.Property(e => e.Department)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
 
-            //    entity.Property(e => e.Email)
-            //        .IsRequired()
-            //        .HasMaxLength(100)
-            //        .IsUnicode(false);
+                entity.Property(e => e.Email)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
 
-            //    entity.Property(e => e.Name)
-            //        .IsRequired()
-            //        .HasMaxLength(100);
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(100);
 
-            //    entity.Property(e => e.Phone)
-            //        .HasMaxLength(10)
-            //        .IsUnicode(false);
-            //});
+                entity.Property(e => e.Phone)
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
+            });
 
             OnModelCreatingPartial(modelBuilder);
         }

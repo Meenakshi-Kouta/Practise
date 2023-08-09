@@ -29,7 +29,7 @@ namespace SuperHeroAPI
         {
             services.AddControllers();
             services.AddMvc();
-
+            services.AddSwaggerGen();
             //Fetching Connection string from APPSETTINGS.JSON  
             var ConnectionString = Configuration.GetConnectionString("SuperHeroConstr");
 
@@ -60,6 +60,11 @@ namespace SuperHeroAPI
             {
                 endpoints.MapControllers();
             });
+            app.UseSwagger();
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "SuperHero");
+            });
+
         }
     }
 }
